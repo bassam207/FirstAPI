@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 
 @Entity
@@ -17,6 +18,16 @@ public class Patient {
     private String gender;
 
     private Long phone;
+    @ManyToOne
+    @JoinColumn(name = "clinic_id")
+    private Clinic clinic;
+    @OneToOne(
+
+            mappedBy = "patient",
+            cascade = CascadeType.ALL
+    )
+    private PatientBio patientbio ;
+
 
     // Constructors
     public Patient() {

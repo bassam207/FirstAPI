@@ -1,7 +1,10 @@
 package com.example.demo;
 
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
+
 
 @Service
 public class PatientService {
@@ -25,5 +28,17 @@ public class PatientService {
         return patientRepository.findById(id)
                 .orElseThrow(() -> new IllegalStateException("Patient with ID " + id + " not found!"));
     }
+
+    public  List<Patient> getPatientByName(String name)
+    {
+       return  patientRepository.findByName(name);
+    }
+
+    public void delete(Long id)
+    {
+        patientRepository.deleteById(id);
+    }
+
+
 
 }
