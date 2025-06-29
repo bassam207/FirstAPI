@@ -3,39 +3,6 @@
 This is a simple RESTful API built with **Spring Boot** for managing patients in a healthcare context. The project includes basic CRUD operations and is documented using **Swagger UI** and tested with **Postman**.
 
 ---
-#  User Stories
-
-This document outlines the user stories for the core users of the Smart Clinic Management System: **Admins**, **Patients**, and **Doctors**.  
-The system uses **PostgreSQL** to store all structured data including users, appointments, and prescriptions.
-
----
-
-## 👨‍💼 Admin User Stories
-
-1. **As an admin**, I want to create, update, and delete doctor accounts, so I can manage the medical staff.
-2. **As an admin**, I want to create, update, and delete patient accounts, so I can maintain accurate records.
-3. **As an admin**, I want to assign roles and permissions to users, so I can control system access.
-4. **As an admin**, I want to view and manage appointment records, so I can ensure smooth scheduling.
-5. **As an admin**, I want to generate reports about doctors and appointments from PostgreSQL, so I can monitor the clinic’s performance.
-
----
-
-## 🧑‍⚕️ Doctor User Stories
-
-1. **As a doctor**, I want to log into my dashboard, so I can view my upcoming appointments.
-2. **As a doctor**, I want to set my available time slots, so patients can book appointments accordingly.
-3. **As a doctor**, I want to view my patients’ medical history from PostgreSQL, so I can provide accurate care.
-4. **As a doctor**, I want to create and update prescriptions stored in PostgreSQL, so I can document treatment plans.
-5. **As a doctor**, I want to view analytics about my appointments, so I can evaluate my workload.
-
----
-
-## 🧑‍🦱 Patient User Stories
-
-1. **As a patient**, I want to register and log into my account, so I can manage my profile and appointments.
-2. **As a patient**, I want to search for available doctors and book appointments, so I can get medical help.
-3. **As a patient**, I want to cancel or reschedule appointments, so I can adapt to changes in my plans.
-4. **As a patien**
 
 
 ## 🚀 Features
