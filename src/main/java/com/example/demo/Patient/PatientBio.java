@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.Patient;
 import jakarta.persistence.*;
 @Entity
 
@@ -15,6 +15,14 @@ public class PatientBio {
     private  Patient patient;
 
     public PatientBio() {
+    }
+
+    public Patient getPatient() {
+        return patient;
+    }
+
+    public void setPatient(Patient patient) {
+        this.patient = patient;
     }
 
     public PatientBio(String compliant) {

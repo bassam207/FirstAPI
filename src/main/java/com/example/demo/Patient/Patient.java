@@ -1,11 +1,44 @@
-package com.example.demo;
+package com.example.demo.Patient;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.example.demo.Appointment.Appointment;
+import com.example.demo.Clinic.Clinic;
 import jakarta.persistence.*;
+import org.hibernate.annotations.CreationTimestamp;
+
+import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "Patients")
 public class Patient {
+
+    public PatientBio getPatientbio() {
+        return patientbio;
+    }
+
+    public void setPatientbio(PatientBio patientbio) {
+        this.patientbio = patientbio;
+    }
+
+    public List<Appointment> getAppointments() {
+        return appointments;
+    }
+
+    public void setAppointments(List<Appointment> appointments) {
+        this.appointments = appointments;
+    }
+
+    public Clinic getClinic() {
+        return clinic;
+    }
+
+    public void setClinic(Clinic clinic) {
+        this.clinic = clinic;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,6 +51,11 @@ public class Patient {
     private String gender;
 
     private Long phone;
+
+    @CreationTimestamp
+    @Column(name = "registered_at", updatable = false)
+    private LocalDateTime registeredAt;
+
     @ManyToOne
     @JoinColumn(name = "clinic_id")
     private Clinic clinic;
@@ -28,6 +66,8 @@ public class Patient {
     )
     private PatientBio patientbio ;
 
+    @OneToMany(mappedBy = "patient", cascade = CascadeType.ALL)
+    private List<Appointment> appointments;
 
     // Constructors
     public Patient() {
@@ -46,7 +86,13 @@ public class Patient {
         return id;
     }
 
+    public LocalDateTime getRegisteredAt() {
+        return registeredAt;
+    }
 
+    public void setRegisteredAt(LocalDateTime registeredAt) {
+        this.registeredAt = registeredAt;
+    }
 
     public String getName() {
         return name;

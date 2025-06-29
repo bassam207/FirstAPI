@@ -1,4 +1,5 @@
-package com.example.demo;
+package com.example.demo.Clinic;
+import com.example.demo.Patient.Patient;
 import jakarta.persistence.*;
 import java.util.List;
 @Entity
