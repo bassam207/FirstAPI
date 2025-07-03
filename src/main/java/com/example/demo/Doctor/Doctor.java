@@ -1,7 +1,9 @@
 package com.example.demo.Doctor;
 
 import com.example.demo.Appointment.Appointment;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Size;
 
 import java.util.List;
 
@@ -18,6 +20,9 @@ public class Doctor {
     private long phone;
     @OneToMany(mappedBy = "doctor", cascade = CascadeType.ALL)
     private List<Appointment> appointments;
+
+
+    private String password;
 
 
     public Doctor(String name, String speciality, long phone) {

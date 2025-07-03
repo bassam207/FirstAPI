@@ -2,10 +2,12 @@ package com.example.demo.Prescription;
 
 import com.example.demo.Appointment.Appointment;
 import jakarta.persistence.*;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.List;
 
 @Entity
+@Document(collation = "prescriptions")
 public class Prescription {
 
     @Id

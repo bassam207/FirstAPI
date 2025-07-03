@@ -52,6 +52,8 @@ public class Patient {
 
     private Long phone;
 
+    private  String password;
+
     @CreationTimestamp
     @Column(name = "registered_at", updatable = false)
     private LocalDateTime registeredAt;

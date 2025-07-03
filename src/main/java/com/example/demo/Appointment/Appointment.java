@@ -19,6 +19,8 @@ public class Appointment {
 
     private LocalTime time ;
 
+    private LocalTime endtime;
+
     @ManyToOne
     @JoinColumn(name = "doctor_id")
     private Doctor doctor ;
