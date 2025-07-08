@@ -1,4 +1,4 @@
-package com.example.demo.Prescription;
+package com.example.demo.Medications;
 
 import jakarta.persistence.*;
 

@@ -39,8 +39,9 @@ class PatientServiceTest {
                 "Ali",
                 "male",
                 20,
-                201187965432L,
-                "Diarrhea"
+                Long.valueOf(201187965432L),
+                "Diarrhea",
+                "@Bassam207"
         );
 
         Patient patient = new Patient(

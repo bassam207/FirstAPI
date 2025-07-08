@@ -3,6 +3,9 @@ import java.util.List;
 
 import com.example.demo.Appointment.Appointment;
 import com.example.demo.Appointment.AppointmentRepository;
+import com.example.demo.Medications.Medication;
+import com.example.demo.Medications.MedicationRepository;
+import com.example.demo.Medications.PrescribedMedication;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;

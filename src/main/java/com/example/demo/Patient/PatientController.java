@@ -72,5 +72,19 @@ public class PatientController {
         return new ResponseEntity<>(errors,HttpStatus.BAD_REQUEST);
     }
 
+    /**
+     * Updates the details of an existing patient.
+     * @param id the ID of the patient to update.
+     * @param dto the new data for the patient.
+     * @return the updated patientDto
+     */
+    @PutMapping("/patients/{id}")
+    public  ResponseEntity<PatientDto> updatePatient(@PathVariable Long id,
+                                                 @RequestBody PatientinputDto dto)
+    {
+        PatientDto updated = patientService.updatePatient( id, dto);
+        return ResponseEntity.ok(updated);
+    }
+
 }
 

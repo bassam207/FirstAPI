@@ -18,7 +18,8 @@ class PatientMapperTest {
     {
         PatientinputDto dto = new PatientinputDto(
                 "Hossam","male",30,
-                201045L,"Headache");
+                201045L,"Headache" , "@Bassam207");
+
 
         Patient patient = patientMapper.toPatient(dto);
 
@@ -27,6 +28,7 @@ class PatientMapperTest {
         assertEquals(dto.age(),patient.getAge());
         assertEquals(dto.phone(),patient.getPhone());
         assertEquals(dto.complaint(),patient.getPatientbio().getCompliant());
+        assertEquals(dto.password(),patient.getPassword());
 
 
     }
@@ -43,6 +45,7 @@ class PatientMapperTest {
         assertEquals(patient.getName(),dto.name());
         assertEquals(patient.getGender(),dto.gender());
         assertEquals(patient.getAge(),dto.age());
+
 
 
     }

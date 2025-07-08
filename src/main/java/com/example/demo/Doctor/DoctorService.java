@@ -1,5 +1,6 @@
 package com.example.demo.Doctor;
 
+import com.example.demo.Exceptions.DuplicateResourceException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -17,6 +18,8 @@ public class DoctorService {
 
     public DoctorDTO addnewdoctor(DoctorinputDTO dto)
     {
+        if (doctorRepository.existesByPhone(dto.phone()))
+            throw new DuplicateResourceException("This phone is existed");
         var doctor = DoctorMapper.todoctor(dto);
         var saved = doctorRepository.save(doctor);
         return DoctorMapper.todto(saved);

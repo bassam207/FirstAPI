@@ -10,18 +10,19 @@ import lombok.Data;
 public class AdminMapper {
 
     public AdminDto toDto(Admin admin) {
-        return AdminDto.builder()
-                .id(admin.getId())
-                .name(admin.getName())
-                .email(admin.getEmail())
-                .build();
+        return new AdminDto(
+                admin.getId(),
+                admin.getName(),
+                admin.getPhoneN()
+
+        );
     }
 
     public Admin fromInputDto(AdminInputDto dto) {
-        return Admin.builder()
-                .name(dto.getName())
-                .email(dto.getEmail())
-                .password(dto.getPassword())
-                .build();
+        return new Admin(
+                dto.name()
+                , dto.phoneN()
+                , dto.password()
+                );
     }
 }

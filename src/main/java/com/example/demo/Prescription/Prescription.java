@@ -1,6 +1,7 @@
 package com.example.demo.Prescription;
 
 import com.example.demo.Appointment.Appointment;
+import com.example.demo.Medications.PrescribedMedication;
 import jakarta.persistence.*;
 import org.springframework.data.mongodb.core.mapping.Document;
 

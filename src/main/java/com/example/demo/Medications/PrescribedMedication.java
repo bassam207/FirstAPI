@@ -1,5 +1,6 @@
-package com.example.demo.Prescription;
+package com.example.demo.Medications;
 
+import com.example.demo.Prescription.Prescription;
 import jakarta.persistence.*;
 @Entity
 public class PrescribedMedication {

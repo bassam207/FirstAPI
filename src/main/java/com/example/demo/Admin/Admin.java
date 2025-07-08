@@ -17,12 +17,19 @@ public class Admin {
 
     private String name;
 
-    private  String PhoneN;
+    private  String phoneN;
 
     @Column(nullable = false)
     private String password;
 
     @Builder.Default
     private String role = "ADMIN";
+
+    public Admin(String name , String phoneN , String password)
+    {
+        this.name = name;
+        this.phoneN = phoneN;
+        this.password = password;
+    }
 }
 
