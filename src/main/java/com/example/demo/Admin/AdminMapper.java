@@ -22,7 +22,7 @@ public class AdminMapper {
         return new Admin(
                 dto.name()
                 , dto.phoneN()
-                , dto.password()
+
                 );
     }
 }

@@ -1,6 +1,7 @@
 package com.example.demo.Doctor;
 
 import com.example.demo.Appointment.Appointment;
+import com.example.demo.User.User;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Size;
@@ -21,8 +22,11 @@ public class Doctor {
     @OneToMany(mappedBy = "doctor", cascade = CascadeType.ALL)
     private List<Appointment> appointments;
 
+    @OneToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 
-    private String password;
+
 
 
     public Doctor(String name, String speciality, long phone) {

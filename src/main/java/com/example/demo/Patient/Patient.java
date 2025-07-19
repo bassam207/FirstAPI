@@ -2,6 +2,7 @@ package com.example.demo.Patient;
 
 import com.example.demo.Appointment.Appointment;
 import com.example.demo.Clinic.Clinic;
+import com.example.demo.User.User;
 import jakarta.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
 
@@ -52,7 +53,7 @@ public class Patient {
 
     private Long phone;
 
-    private  String password;
+
 
     @CreationTimestamp
     @Column(name = "registered_at", updatable = false)
@@ -70,6 +71,10 @@ public class Patient {
 
     @OneToMany(mappedBy = "patient", cascade = CascadeType.ALL)
     private List<Appointment> appointments;
+
+    @OneToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 
     // Constructors
     public Patient() {
@@ -128,12 +133,6 @@ public class Patient {
         this.phone = phone;
     }
 
-    public String getPassword() {
-        return password;
-    }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
 
 }

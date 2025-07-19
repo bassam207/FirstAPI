@@ -1,5 +1,6 @@
 package com.example.demo.Admin;
 
+import com.example.demo.User.User;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -22,14 +23,14 @@ public class Admin {
     @Column(nullable = false)
     private String password;
 
-    @Builder.Default
-    private String role = "ADMIN";
-
-    public Admin(String name , String phoneN , String password)
+    @OneToOne
+    @JoinColumn(name = "user_id")
+    private User user ;
+    public Admin(String name , String phoneN )
     {
         this.name = name;
         this.phoneN = phoneN;
-        this.password = password;
+
     }
 }
 

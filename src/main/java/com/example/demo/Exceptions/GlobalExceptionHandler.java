@@ -45,4 +45,11 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(HttpStatus.CONFLICT)
                 .body(new ErrorResponse(ex.getMessage(), 409));
     }
+
+    @ExceptionHandler(UserEmailNotFoundException.class)
+    public ResponseEntity<ErrorResponse>handleUserEmailNotFound(UserEmailNotFoundException ex)
+    {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                .body(new ErrorResponse(ex.getMessage(),404 ));
+    }
 }
